@@ -28,7 +28,7 @@ The same rubric-grounded assessment can be presented in three ways: one-shot com
 **Quick start (Docker Compose)**
 
 ```bash
-git clone https://github.com/guanyuhang668-bit/ASSESS-A-structured-feedback-tool-for-rubric-grounded-UML-diagram-assessment.git
+git clone https://github.com/guanyuhang668-bit/ASSESS.git
 cd <repo>
 cp backend/.env.example backend/.env    # fill in your own LLM API keys
 docker compose up --build
@@ -76,7 +76,7 @@ ASSESS 是一款开源课堂工具，用于 UML 建模作业的形成性评价�
 **快速开始（Docker Compose）**
 
 ```bash
-git clone https://github.com/guanyuhang668-bit/ASSESS-A-structured-feedback-tool-for-rubric-grounded-UML-diagram-assessment.git
+git clone https://github.com/guanyuhang668-bit/ASSESS.git
 cd <repo>
 cp backend/.env.example backend/.env    # 填入自己的 LLM API Key
 docker compose up --build
