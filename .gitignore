@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+data/runs/
+data/results/
+.env
+.DS_Store
+
+# 前端依赖 / 构建产物
+node_modules/
+*.tsbuildinfo
+
+# 运行时数据（学生上传件、评测结果等），不入库
+uploads/
+scripts/benchmark_results/
+
+# 编辑器
+.idea/
+.vscode/

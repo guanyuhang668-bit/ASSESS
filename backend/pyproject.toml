@@ -1,0 +1,70 @@
+[project]
+name = "uml-grader-backend"
+version = "0.2.0"
+description = "UML auto-grading agent: FastAPI backend + async CoT + PostgreSQL"
+requires-python = ">=3.10"
+dependencies = [
+    # ---- Web ----
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",         # 文件上传
+    "websockets>=12.0",
+
+    # ---- 数据校验 / 配置 ----
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "pyyaml>=6.0",
+    "openpyxl>=3.1",
+    "jinja2>=3.1",
+
+    # ---- 数据库 ----
+    "sqlalchemy[asyncio]>=2.0",
+    "asyncpg>=0.29",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.1",            # sync 备用（alembic 用）
+
+    # ---- 认证 ----
+    "passlib[bcrypt]>=1.7",
+    "bcrypt>=4.0,<5",
+    "python-jose[cryptography]>=3.3",
+
+    # ---- 任务队列 ----
+    "arq>=0.26",                       # async Redis 队列
+    "redis>=5.0",
+
+    # ---- LLM ----
+    "openai>=1.30",
+    "anthropic>=0.30",
+    "httpx>=0.27",
+    "tenacity>=8.2",
+
+    # ---- 对象存储 ----
+    "minio>=7.2",
+
+    # ---- 分析 ----
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "pingouin>=0.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.5",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

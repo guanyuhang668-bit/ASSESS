@@ -1,0 +1,17 @@
+# 任务：汇总给出整体评语
+
+## {{ diagram_type_cn }} - 各指标评分摘要
+{% for c in criterion_scores %}
+- {{ c.code }} {{ c.name }}：{{ "%.2f"|format(c.score) }} / {{ "%.2f"|format(c.max_score) }}
+  {%- if c.issues %}
+  缺陷：{% for i in c.issues %}{{ i.description }}；{% endfor %}
+  {%- endif %}
+{%- endfor %}
+
+## 输出（严格 JSON）
+{
+  "total_score": 0.0,
+  "overall_comment": ""
+}
+
+`total_score` 为百分制（0-100），计算方式：所有适用指标得分之和 / 所有适用指标满分之和 × 100（不适用指标不计入）。`overall_comment` 为 80-200 字的总评语，指出 2-3 个主要问题与 1 条改进方向。

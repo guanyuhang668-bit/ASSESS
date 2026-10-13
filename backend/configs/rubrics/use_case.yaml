@@ -1,0 +1,428 @@
+diagram_type: use_case
+source: ../UML指标.xlsx
+criteria:
+- code: UC1.1
+  name: 主要参与者完整性
+  parent_code: UC1
+  parent_name: 识别参与者 (Actors)
+  description: 是否识别出题目要求中真正参与系统交互的主要外部角色；不得遗漏关键角色。
+  error_freq_total: 84
+  error_freq_by_class:
+    12401班: 5
+    12402班: 14
+    12403班: 12
+    12404班: 7
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC1.2
+  name: 参与者外部性正确性
+  parent_code: UC1
+  parent_name: 识别参与者 (Actors)
+  description: Actor 应为系统外部与系统交互的角色，不应把系统内部模块、数据库、控制器等误画为 Actor。
+  error_freq_total: 17
+  error_freq_by_class:
+    12402班: 5
+    12404班: 2
+    12401班: 2
+    12403班: 3
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC1.3
+  name: 参与者命名合理性
+  parent_code: UC1
+  parent_name: 识别参与者 (Actors)
+  description: 参与者名称应清晰、稳定、有业务意义，如“学生”“教师”“管理员”；避免“用户1”“操作者”等模糊命名。（注：允许同义词、缩写变体、中英文混用，只要语义明确一致即视为满足要求，不因命名风格差异扣分。）
+  error_freq_total: 12
+  error_freq_by_class:
+    12402班: 3
+    12403班: 2
+    12404班: 5
+    12401班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC1.4
+  name: 参与者粒度一致性
+  parent_code: UC1
+  parent_name: 识别参与者 (Actors)
+  description: 参与者抽象层次应一致，避免一部分是角色、一部分是具体人员、一部分是组织机构。
+  error_freq_total: 11
+  error_freq_by_class:
+    12401班: 1
+    12402班: 5
+    12403班: 2
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC1.5
+  name: 参与者冗余控制
+  parent_code: UC1
+  parent_name: 识别参与者 (Actors)
+  description: 不应重复表达本质相同的参与者，也不应为同一角色拆出多个无必要 Actor。
+  error_freq_total: 24
+  error_freq_by_class:
+    12401班: 2
+    12402班: 2
+    12403班: 1
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC2.1
+  name: 核心功能覆盖性
+  parent_code: UC2
+  parent_name: 识别用例（Use Cases）
+  description: 用例是否覆盖题目文本中的主要功能需求，是否遗漏关键业务目标。
+  error_freq_total: 57
+  error_freq_by_class:
+    12401班: 4
+    12402班: 12
+    12403班: 8
+    12404班: 4
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC2.2
+  name: 用例目标导向性
+  parent_code: UC2
+  parent_name: 识别用例（Use Cases）
+  description: 用例为参与者提供可独立达成的业务价值（如“查询订单状态”），任何仅描述技术实现步骤（如“点击查询按钮”）或无法独立满足用户目标的行为，都不应作为独立用例。
+  error_freq_total: 48
+  error_freq_by_class:
+    12401班: 4
+    12402班: 9
+    12403班: 6
+    12404班: 4
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC2.3
+  name: 用例命名规范性
+  parent_code: UC2
+  parent_name: 识别用例（Use Cases）
+  description: 用例名称应使用清晰的业务动作短语，如“选课”“提交作业”“查询成绩”；避免“处理数据”“功能1”等空泛表达。（注：允许同义词、缩写变体、中英文混用，只要语义明确一致即视为满足要求，不因命名风格差异扣分。）
+  error_freq_total: 8
+  error_freq_by_class:
+    12401班: 2
+    12402班: 2
+    12403班: 3
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC2.4
+  name: 用例粒度恰当性
+  parent_code: UC2
+  parent_name: 识别用例（Use Cases）
+  description: 用例不应过细导致碎片化，也不应过粗导致多个独立目标混成一个用例。
+  error_freq_total: 54
+  error_freq_by_class:
+    12401班: 4
+    12402班: 11
+    12403班: 6
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC2.5
+  name: 系统边界对应性
+  parent_code: UC2
+  parent_name: 识别用例（Use Cases）
+  description: 用例应属于当前题目或当前子系统范围内，不应画入与题目无关的功能。
+  error_freq_total: 8
+  error_freq_by_class:
+    12402班: 3
+    12403班: 3
+    12401班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC3.1
+  name: 泛化关系识别正确性
+  parent_code: UC3
+  parent_name: 参与者之间的关系
+  description: 当参与者之间存在父子角色关系时，是否正确使用泛化表示。
+  error_freq_total: 90
+  error_freq_by_class:
+    12401班: 6
+    12402班: 28
+    12403班: 22
+    12404班: 10
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC3.2
+  name: 关系方向正确性
+  parent_code: UC3
+  parent_name: 参与者之间的关系
+  description: 泛化箭头方向是否正确，是否从具体角色指向一般角色。
+  error_freq_total: 1
+  error_freq_by_class:
+    12402班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC3.3
+  name: 关系表示正确性
+  parent_code: UC3
+  parent_name: 参与者之间的关系
+  description: 泛化关系是否为无其他文字标注带空心箭头的实线
+  error_freq_total: 5
+  error_freq_by_class:
+    12402班: 2
+    12403班: 1
+    12404班: 1
+    12401班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC3.4
+  name: 关系必要性判断
+  parent_code: UC3
+  parent_name: 参与者之间的关系
+  description: 只在题目或语义确有需要时建立参与者间关系，避免为“看起来完整”而强行建立关系。
+  error_freq_total: 1
+  error_freq_by_class:
+    12402班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC3.5
+  name: 关系冗余控制
+  parent_code: UC3
+  parent_name: 参与者之间的关系
+  description: 不应重复表达同一层关系，也不应建立无实际意义的平行继承结构。
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC4.1
+  name: 参与关联完整性
+  parent_code: UC4
+  parent_name: 参与者与用例之间的关系
+  description: 每个核心用例是否与相应参与者建立了正确关联。
+  error_freq_total: 10
+  error_freq_by_class:
+    12401班: 1
+    12402班: 1
+    12403班: 2
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC4.2
+  name: 参与关联正确性
+  parent_code: UC4
+  parent_name: 参与者与用例之间的关系
+  description: 参与者是否连接到了真正与其相关的用例，避免误连、漏连。
+  error_freq_total: 26
+  error_freq_by_class:
+    12401班: 1
+    12402班: 4
+    12403班: 2
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC4.3
+  name: 孤立元素检查
+  parent_code: UC4
+  parent_name: 参与者与用例之间的关系
+  description: 是否存在未被任何参与者使用的核心用例，或与任何用例无关的参与者。
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.1
+  name: include / extend 使用正确性
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 是否在需要复用或扩展行为时正确使用 include / extend，而非全部用普通关联代替。
+  error_freq_total: 109
+  error_freq_by_class:
+    12401班: 7
+    12402班: 13
+    12403班: 15
+    12404班: 15
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.2
+  name: include / extend 方向正确性
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: include / extend 的箭头方向，依赖方向正确
+  error_freq_total: 54
+  error_freq_by_class:
+    12401班: 1
+    12402班: 7
+    12403班: 4
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.3
+  name: 泛化关系识别正确性
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 当用例之间存在泛化关系时（如一个功能的多种实现方式），是否正确使用泛化表示。
+  error_freq_total: 76
+  error_freq_by_class:
+    12401班: 3
+    12402班: 17
+    12403班: 11
+    12404班: 12
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5
+  name: 4关系方向正确性
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 泛化箭头方向是否正确
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.5
+  name: 关系表示
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 泛化关系是否为无其他文字标注带空心箭头的实线
+  error_freq_total: 1
+  error_freq_by_class:
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.6
+  name: 关系必要性判断
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 只在题目或语义确有需要时建立用例间关系，避免为“看起来完整”而强行建立关系。
+  error_freq_total: 30
+  error_freq_by_class:
+    12401班: 2
+    12402班: 3
+    12403班: 2
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC5.7
+  name: 关系冗余控制
+  parent_code: UC5
+  parent_name: 用例与用例之间的关系
+  description: 不应重复表达同一层关系，也不应建立无实际意义的平行继承结构。
+  error_freq_total: 2
+  error_freq_by_class:
+    12401班: 1
+    12402班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC6.1
+  name: Subject 边界明确性
+  parent_code: UC6
+  parent_name: 系统边界与范围表达
+  description: 是否明确表示所建模的系统/子系统边界。
+  error_freq_total: 42
+  error_freq_by_class:
+    12401班: 5
+    12402班: 8
+    12403班: 6
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC6.2
+  name: 边界内外元素区分
+  parent_code: UC6
+  parent_name: 系统边界与范围表达
+  description: 用例应在系统边界内，参与者应在边界外；不得混放。
+  error_freq_total: 15
+  error_freq_by_class:
+    12401班: 1
+    12402班: 3
+    12404班: 1
+    12403班: 3
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC6.3
+  name: 系统边界名称
+  parent_code: UC6
+  parent_name: 系统边界与范围表达
+  description: 系统边界需要标注系统名称
+  error_freq_total: 93
+  error_freq_by_class:
+    12401班: 9
+    12402班: 21
+    12403班: 14
+    12404班: 14
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC6.4
+  name: 范围控制合理性
+  parent_code: UC6
+  parent_name: 系统边界与范围表达
+  description: 图中表达的功能范围是否与题目要求一致，不扩大也不缩小。
+  error_freq_total: 26
+  error_freq_by_class:
+    12401班: 3
+    12402班: 6
+    12403班: 3
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: UC7.1
+  name: 画图框架规范性
+  parent_code: UC7
+  parent_name: 画图规范性
+  description: 是否符合用例图画图规范
+  error_freq_total: 50
+  error_freq_by_class:
+    12401班: 7
+    12402班: 9
+    12403班: 7
+    12404班: 8
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''

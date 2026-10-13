@@ -1,0 +1,53 @@
+# 4 个 LLM 的调用配置。
+# ---------------------------------------------------------------------------
+# provider 可选:
+#   - openai            : 官方 OpenAI
+#   - openai_compat     : OpenAI 兼容 API（DeepSeek / Qwen 开放平台 / 本地 vLLM 等）
+#   - anthropic         : Anthropic Claude
+#   - mock              : 本地合成输出，不联网，用于端到端调试
+#
+# 所有真实 provider 的 api_key 通过 env_var 指定环境变量名，避免硬编码。
+# temperature 统一设为 0.0 保证可复现；seed 仅部分 provider 支持。
+# ---------------------------------------------------------------------------
+
+defaults:
+  temperature: 0.0
+  max_tokens: 4096
+  timeout: 120          # 秒
+  seed: 42
+
+models:
+
+  # --- 1. OpenAI GPT（经 nengyongai 代理）---
+  gpt4o:
+    provider: openai_compat
+    model: gpt-4o
+    base_url: https://ai.nengyongai.cn/v1
+    env_var: OPENAI_API_KEY
+    supports_json_schema: true
+
+  # --- 3. DeepSeek V3（OpenAI 兼容）---
+  deepseek_v3:
+    provider: openai_compat
+    model: deepseek-v3-250324
+    base_url: https://ai.nengyongai.cn/v1
+    env_var: DEEPSEEK_API_KEY
+    supports_json_schema: true     # DeepSeek 支持 response_format=json_object
+
+
+  # --- 5. Google Gemini 3 Flash（OpenAI 兼容）---
+  gemini_3_flash:
+    provider: openai_compat
+    model: gemini-3-flash-preview
+    base_url: https://ai.nengyongai.cn/v1
+    env_var: GEMINI_API_KEY
+    supports_json_schema: true
+
+  # --- 6. Qwen-3-Max（OpenAI 兼容）---
+  qwen_3_max:
+    provider: openai_compat
+    model: qwen3-max
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    env_var: QWEN3_API_KEY
+    supports_json_schema: true
+

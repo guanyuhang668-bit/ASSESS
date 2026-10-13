@@ -1,0 +1,323 @@
+diagram_type: sequence
+source: ../UML指标.xlsx
+criteria:
+- code: SC1.1
+  name: 场景对象完整性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 是否包含该场景所必需的主要对象/生命线。（包含该场景所需主要对象即可，允许合理省略或合并次要对象，不要求与参考答案逐一完全匹配。）
+  error_freq_total: 25
+  error_freq_by_class:
+    12401班: 6
+    12402班: 8
+    12403班: 5
+    12404班: 6
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC1.2
+  name: 对象命名合理性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 对象名称应清楚表达角色与职责，命名应与题目及类图语义一致。（注：允许同义词、缩写变体、中英文混用，只要语义明确一致即视为满足要求，不因命名风格差异扣分。）
+  error_freq_total: 7
+  error_freq_by_class:
+    12401班: 2
+    12403班: 3
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC1.3
+  name: 对象角色正确性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 是否合理区分边界对象、控制对象、实体对象或其他业务对象。
+  error_freq_total: 3
+  error_freq_by_class:
+    12401班: 2
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC1.4
+  name: 对象场景适配性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 对象应服务于当前具体场景，避免无关对象堆砌。
+  error_freq_total: 3
+  error_freq_by_class:
+    12402班: 1
+    12403班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC1.5
+  name: 对象来源合理性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 对象最好能在类图中找到来源，避免出现无依据对象。
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC1.6
+  name: 对象顺序合理性
+  parent_code: SC1
+  parent_name: 正确识别对象（Objects / Lifelines）
+  description: 时序图顶部对象的顺序按照调用关系从左到右横向排序
+  error_freq_total: 22
+  error_freq_by_class:
+    12401班: 6
+    12402班: 5
+    12403班: 6
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC2.1
+  name: 关键消息完整性
+  parent_code: SC2
+  parent_name: 正确识别消息（Messages）
+  description: 是否包含实现该场景目标所需的关键消息。
+  error_freq_total: 30
+  error_freq_by_class:
+    12401班: 8
+    12402班: 9
+    12403班: 7
+    12404班: 6
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC2.2
+  name: 消息命名准确性
+  parent_code: SC2
+  parent_name: 正确识别消息（Messages）
+  description: 消息名称应体现业务意图，而不是含糊词或数据标签。（注：允许同义词、缩写变体、中英文混用，只要语义明确一致即视为满足要求，不因命名风格差异扣分。）
+  error_freq_total: 9
+  error_freq_by_class:
+    12401班: 3
+    12402班: 3
+    12403班: 1
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC2.3
+  name: 消息方向正确性
+  parent_code: SC2
+  parent_name: 正确识别消息（Messages）
+  description: 消息应由合理发送者发往合理接收者，不能颠倒对象职责。
+  error_freq_total: 32
+  error_freq_by_class:
+    12401班: 9
+    12402班: 11
+    12403班: 7
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC2.4
+  name: 消息类型合理性
+  parent_code: SC2
+  parent_name: 正确识别消息（Messages）
+  description: 在需要时是否区分同步、异步、返回、创建、删除等消息。
+  error_freq_total: 31
+  error_freq_by_class:
+    12401班: 8
+    12402班: 9
+    12403班: 9
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC2.5
+  name: 消息与操作一致性
+  parent_code: SC2
+  parent_name: 正确识别消息（Messages）
+  description: 【需类图上下文】消息最好能映射到相关类中的操作，避免“无来源消息”。（本质上是跨图检查，单独评价时序图时无法执行，需类图数据作为输入。若无类图上下文，标记为 N/A。）
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC3.1
+  name: 顺序逻辑正确性
+  parent_code: SC3
+  parent_name: 正确识别消息顺序（Order of Messages）
+  description: 消息先后顺序是否符合题目所描述的业务流程。
+  error_freq_total: 4
+  error_freq_by_class:
+    12401班: 1
+    12402班: 2
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC3.2
+  name: 前置依赖正确性
+  parent_code: SC3
+  parent_name: 正确识别消息顺序（Order of Messages）
+  description: 某些步骤是否在必要条件满足后才发生，避免逻辑倒置。
+  error_freq_total: 6
+  error_freq_by_class:
+    12401班: 1
+    12402班: 3
+    12403班: 1
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC3.3
+  name: 关键步骤覆盖性
+  parent_code: SC3
+  parent_name: 正确识别消息顺序（Order of Messages）
+  description: 流程中是否遗漏必要步骤，导致场景无法闭合。
+  error_freq_total: 19
+  error_freq_by_class:
+    12401班: 5
+    12402班: 5
+    12403班: 6
+    12404班: 3
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC3.4
+  name: 返回与结束合理性
+  parent_code: SC3
+  parent_name: 正确识别消息顺序（Order of Messages）
+  description: 场景是否有合适的结束或返回表达，避免流程悬空。
+  error_freq_total: 45
+  error_freq_by_class:
+    12401班: 12
+    12402班: 14
+    12403班: 10
+    12404班: 9
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC4.1
+  name: 条件分支表达
+  parent_code: SC4
+  parent_name: 场景控制结构表达【前置条件】
+  description: 【前置条件：仅在题目明确涉及相关场景时评价，否则标记 N/A】对于存在条件判断的场景，是否合理体现 alt / opt 等结构。
+  error_freq_total: 4
+  error_freq_by_class:
+    12401班: 1
+    12402班: 2
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC4.2
+  name: 循环过程表达
+  parent_code: SC4
+  parent_name: 场景控制结构表达【前置条件】
+  description: 【前置条件：仅在题目明确涉及相关场景时评价，否则标记 N/A】对于重复行为，是否合理体现 loop 结构。
+  error_freq_total: 4
+  error_freq_by_class:
+    12401班: 1
+    12402班: 3
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC4.3
+  name: 异常流程表达
+  parent_code: SC4
+  parent_name: 场景控制结构表达【前置条件】
+  description: 【前置条件：仅在题目明确涉及相关场景时评价，否则标记 N/A】若题目明显涉及异常或失败路径，是否进行了必要体现。
+  error_freq_total: 8
+  error_freq_by_class:
+    12401班: 3
+    12402班: 2
+    12403班: 2
+    12404班: 1
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC4.4
+  name: 控制结构使用恰当性
+  parent_code: SC4
+  parent_name: 场景控制结构表达【前置条件】
+  description: 【前置条件：仅在题目明确涉及相关场景时评价，否则标记 N/A】不应滥用 combined fragments，也不应遗漏题目明确需要的控制结构。
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC5.1
+  name: 单一场景聚焦性
+  parent_code: SC5
+  parent_name: 场景边界与目标一致性
+  description: 一张时序图应围绕一个明确场景展开，不应把多个独立用例混杂。
+  error_freq_total: 0
+  error_freq_by_class: {}
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC5.2
+  name: 场景目标完成性
+  parent_code: SC5
+  parent_name: 场景边界与目标一致性
+  description: 流程最终是否实现了该场景的核心目标。
+  error_freq_total: 10
+  error_freq_by_class:
+    12401班: 3
+    12402班: 3
+    12403班: 2
+    12404班: 2
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC5.3
+  name: 与题目场景对应性
+  parent_code: SC5
+  parent_name: 场景边界与目标一致性
+  description: 时序图是否真正对应题目要求的某个具体用例/子场景。
+  error_freq_total: 22
+  error_freq_by_class:
+    12401班: 5
+    12402班: 8
+    12403班: 4
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''
+- code: SC6.1
+  name: 画图框架规范性
+  parent_code: SC6
+  parent_name: 画图规范性
+  description: 是否符合时序图画图规范
+  error_freq_total: 28
+  error_freq_by_class:
+    12401班: 5
+    12402班: 12
+    12403班: 6
+    12404班: 5
+  weight: 1.0
+  scoring_hint: ''
+  common_errors: []
+  not_applicable_when: ''

@@ -1,0 +1,45 @@
+# 任务：对学生 {{ diagram_type_cn }}的一组指标进行评判
+
+## 题目
+{{ problem_statement or "（未提供题目文本，请仅按通用 UML 规范判定）" }}
+
+## 学生作品（结构化表示）
+{{ ir_textual }}
+
+## 本批待评判指标（一级：{{ parent_code }} {{ parent_name }}）
+{% for c in criteria %}
+### {{ c.code }} {{ c.name }}
+- 说明：{{ c.description }}
+{%- if c.scoring_hint %}
+- 评分要点：{{ c.scoring_hint }}
+{%- endif %}
+{%- if c.common_errors %}
+- 常见错误：{% for e in c.common_errors %}
+  - {{ e }}{% endfor %}
+{%- endif %}
+{%- if c.not_applicable_when %}
+- 不适用条件：{{ c.not_applicable_when }}
+{%- endif %}
+- 高频：本指标在过往作业中被扣分 {{ c.error_freq_total }} 次。
+{% endfor %}
+
+## 输出（严格 JSON）
+注意：`score` 是 **0 到 10 的整数分**（0 = 完全不满足, 10 = 完全满足）。每项 max_score 均为 10。
+若某条指标在本题确实不涉及（如题目中无该场景），置 `not_applicable: true`，`score` 填 0，并在 `reasoning` 中说明原因。不涉及的指标不会计入总分。
+{
+  "criteria": [
+    {% for c in criteria -%}
+    {
+      "code": "{{ c.code }}",
+      "score": 0,
+      "reasoning": "",
+      "not_applicable": false,
+      "issues": [
+        {"element_ref": ["<IR id>"], "description": "", "severity": "minor|major|critical", "suggestion": ""}
+      ]
+    }{{ "," if not loop.last else "" }}
+    {% endfor %}
+  ]
+}
+
+请逐条评判：先定位 IR 中涉及的元素/关系 → 对照标准 → 给分（0-10）与理由 → 列出 issues（若完全符合则 issues 为 []）。若本题不涉及该指标，置 not_applicable 为 true。
