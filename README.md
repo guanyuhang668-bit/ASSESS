@@ -79,6 +79,10 @@ scripts/               multi-model benchmark and analysis utilities
 docker-compose.yml     PostgreSQL 16, Redis 7, MinIO, backend, worker, frontend
 ```
 
+## Supplementary materials
+
+The [`materials/`](materials/) folder holds the study materials and the de-identified data behind the reported classroom analyses: the rubric catalog (`indicator.xlsx`), the two modeling assignments, the student questionnaire with aggregate response counts, and the de-identified score matrices for classes 1–2 and 3–4. See [materials/README.md](materials/README.md) for the file-by-file list. Student submissions and identifiable course records are not included.
+
 ## Documentation
 
 The full technical documentation (directory layout, configuration reference, HTTP API, grading pipeline, deployment notes, and a pre-release security checklist) is available in Chinese in [README.zh-CN.md](README.zh-CN.md).
